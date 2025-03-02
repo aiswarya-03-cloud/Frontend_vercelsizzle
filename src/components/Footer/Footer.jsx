@@ -20,7 +20,7 @@ const Footer = () => {
     </svg> */}
 
     <div>
-                 <img className= "footimage" src= "\public\Sizzler_Bytes_latest.png" class="logo" alt="" />
+                 <img className= "footimage" src= "Sizzler_Bytes_latest.png" class="logo" alt="" />
      </div>
 
 
