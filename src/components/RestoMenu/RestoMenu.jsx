@@ -369,7 +369,8 @@ import {axiosInstance} from "../../config/axiosinstance"; // Ensure axios instan
     const response = await axiosInstance({
       url: "/cart/add",
       method: "POST",
-      data:{restaurantId,menuItemId,quantity}
+      data:{restaurantId,menuItemId,quantity},
+      withCredentials: true,
     });
 
     // fetchCartCount(); 
