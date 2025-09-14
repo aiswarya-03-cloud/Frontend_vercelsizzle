@@ -335,113 +335,113 @@
 
 ////99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 
-import React from "react";
-import { Card, CardContent, CardMedia, Typography, Button, Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-//import toast from "react-hot-toast";
-import toast, { Toaster } from 'react-hot-toast';
-import {axiosInstance} from "../../config/axiosinstance"; // Ensure axios instance is correctly imported
+// import React from "react";
+// import { Card, CardContent, CardMedia, Typography, Button, Box } from "@mui/material";
+// import { useNavigate } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+// //import toast from "react-hot-toast";
+// import toast, { Toaster } from 'react-hot-toast';
+// import {axiosInstance} from "../../config/axiosinstance"; // Ensure axios instance is correctly imported
 
 
-// export const addToCart = async () => {
-    const RestoMenu = ({menuItem}) =>{
+// // export const addToCart = async () => {
+//     const RestoMenu = ({menuItem}) =>{
         
-    const navigate = useNavigate();
+//     const navigate = useNavigate();
 
    
-        const params = useParams();
-        const {restaurantId} = params;
-        console.log("restId....>",restaurantId)
-        console.log("MenuItem....>",menuItem)
-        const menuItemId = menuItem._id
-        console.log("MenuItemID---",menuItemId)
+//         const params = useParams();
+//         const {restaurantId} = params;
+//         console.log("restId....>",restaurantId)
+//         console.log("MenuItem....>",menuItem)
+//         const menuItemId = menuItem._id
+//         console.log("MenuItemID---",menuItemId)
 
         
 
- const addToCart = async () =>{
+//  const addToCart = async () =>{
 
-    console.log('Hi---lll')
+//     console.log('Hi---lll')
 
-    let quantity = 1;
+//     let quantity = 1;
 
-  try {
-    const response = await axiosInstance({
-      url: "/cart/add",
-      method: "POST",
-      data:{restaurantId,menuItemId,quantity}
-    });
+//   try {
+//     const response = await axiosInstance({
+//       url: "/cart/add",
+//       method: "POST",
+//       data:{restaurantId,menuItemId,quantity}
+//     });
 
-    // fetchCartCount(); 
+//     // fetchCartCount(); 
 
-    console.log("response===++", response);
-    toast.success("Added to cart");
-  } catch (error) {
-    // console.log("Error adding item to cart:", error?.response?.data?.message)
-     console.log(error);
-    toast.error("Failed to add to Cart"); 
-  }
-}; 
+//     console.log("response===++", response);
+//     toast.success("Added to cart");
+//   } catch (error) {
+//     // console.log("Error adding item to cart:", error?.response?.data?.message)
+//      console.log(error);
+//     toast.error("Failed to add to Cart"); 
+//   }
+// }; 
 
 
-const notify =() => toast('Added to Cart')
-const handleAddtoCartClick = () =>{
+// const notify =() => toast('Added to Cart')
+// const handleAddtoCartClick = () =>{
     
-    navigate('/cart');
-}
+//     navigate('/cart');
+// }
 
 
-  return (
-    <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>
-      <Card
-        sx={{
-          maxWidth: 400,
-          borderRadius: "12px",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-          textAlign: "center",
-        }}
-      >
-        <CardMedia
-          component="img"
-          height="200"
-          image={menuItem.image}
-          alt={menuItem.name}
-          sx={{ borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}
-        />
-        <CardContent sx={{ backgroundColor: "#F3E5F5" }}>
-          <Typography variant="h5" sx={{ fontWeight: "bold", color: "#4A148C" }}>
-            {menuItem.name}
-          </Typography>
-          <Typography variant="body2" sx={{ color: "#6A1B9A", mt: 1 }}>
-            {menuItem.description}
-          </Typography>
-          <Typography variant="h6" sx={{ color: "#7E57C2", mt: 1, fontWeight: "bold" }}>
-            ₹ {menuItem.price}
-          </Typography>
-          <Typography variant="subtitle2" sx={{ fontStyle: "italic", color: "#7E57C2", mt: 1 }}>
-            🍽️ {menuItem.restaurantName}
-          </Typography>
-          <Button
-            //onClick={notify}
-            onClick={addToCart}
-            sx={{
-              mt: 2,
-              backgroundColor: "#9370DB",
-              color: "white",
-              fontWeight: "bold",
-              "&:hover": { backgroundColor: "#7A5DBE" },
-            }}
-          >
-            Add to Cart
-          </Button>
-          <Toaster />
-        </CardContent>
-      </Card>
-    </Box>
-  );
+//   return (
+//     <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>
+//       <Card
+//         sx={{
+//           maxWidth: 400,
+//           borderRadius: "12px",
+//           boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+//           textAlign: "center",
+//         }}
+//       >
+//         <CardMedia
+//           component="img"
+//           height="200"
+//           image={menuItem.image}
+//           alt={menuItem.name}
+//           sx={{ borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}
+//         />
+//         <CardContent sx={{ backgroundColor: "#F3E5F5" }}>
+//           <Typography variant="h5" sx={{ fontWeight: "bold", color: "#4A148C" }}>
+//             {menuItem.name}
+//           </Typography>
+//           <Typography variant="body2" sx={{ color: "#6A1B9A", mt: 1 }}>
+//             {menuItem.description}
+//           </Typography>
+//           <Typography variant="h6" sx={{ color: "#7E57C2", mt: 1, fontWeight: "bold" }}>
+//             ₹ {menuItem.price}
+//           </Typography>
+//           <Typography variant="subtitle2" sx={{ fontStyle: "italic", color: "#7E57C2", mt: 1 }}>
+//             🍽️ {menuItem.restaurantName}
+//           </Typography>
+//           <Button
+//             //onClick={notify}
+//             onClick={addToCart}
+//             sx={{
+//               mt: 2,
+//               backgroundColor: "#9370DB",
+//               color: "white",
+//               fontWeight: "bold",
+//               "&:hover": { backgroundColor: "#7A5DBE" },
+//             }}
+//           >
+//             Add to Cart
+//           </Button>
+//           <Toaster />
+//         </CardContent>
+//       </Card>
+//     </Box>
+//   );
 
-}
-export default RestoMenu;
+// }
+// export default RestoMenu;
 
 
 // import React, { useState, useEffect,useContext } from "react";
@@ -543,3 +543,122 @@ export default RestoMenu;
 // };
 
 // export default RestoMenu;
+
+import React, { useState } from "react";
+import { Card, CardContent, CardMedia, Typography, Button, Box, IconButton } from "@mui/material";
+import { useNavigate, useParams } from "react-router-dom";
+import { Add, Remove } from "@mui/icons-material"; // For + and - icons
+import toast, { Toaster } from "react-hot-toast";
+import { axiosInstance } from "../../config/axiosinstance";
+
+const RestoMenu = ({ menuItem }) => {
+  const navigate = useNavigate();
+  const params = useParams();
+  const { restaurantId } = params;
+
+  console.log("restId....>", restaurantId);
+  console.log("MenuItem....>", menuItem);
+
+  const menuItemId = menuItem._id;
+  console.log("MenuItemID---", menuItemId);
+
+  // State for quantity
+  const [quantity, setQuantity] = useState(1);
+
+  // Increase quantity
+  const increaseQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  // Decrease quantity but not below 1
+  const decreaseQuantity = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
+  const addToCart = async () => {
+    console.log("Adding to cart with quantity:", quantity);
+
+    try {
+      const response = await axiosInstance({
+        url: "/cart/add",
+        method: "POST",
+        data: { restaurantId, menuItemId, quantity },
+      });
+
+      console.log("response===++", response);
+      toast.success("Added to cart");
+      navigate("/cart"); // redirect to cart after adding
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to add to Cart");
+    }
+  };
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>
+      <Card
+        sx={{
+          maxWidth: 400,
+          borderRadius: "12px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+          textAlign: "center",
+        }}
+      >
+        <CardMedia
+          component="img"
+          height="200"
+          image={menuItem.image}
+          alt={menuItem.name}
+          sx={{ borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}
+        />
+        <CardContent sx={{ backgroundColor: "#F3E5F5" }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", color: "#4A148C" }}>
+            {menuItem.name}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "#6A1B9A", mt: 1 }}>
+            {menuItem.description}
+          </Typography>
+          <Typography variant="h6" sx={{ color: "#7E57C2", mt: 1, fontWeight: "bold" }}>
+            ₹ {menuItem.price}
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{ fontStyle: "italic", color: "#7E57C2", mt: 1 }}
+          >
+            🍽️ {menuItem.restaurantName}
+          </Typography>
+
+          {/* Quantity Control */}
+          <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 2 }}>
+            <IconButton onClick={decreaseQuantity} sx={{ color: "#7A5DBE" }}>
+              <Remove />
+            </IconButton>
+            <Typography variant="h6" sx={{ mx: 2, fontWeight: "bold" }}>
+              {quantity}
+            </Typography>
+            <IconButton onClick={increaseQuantity} sx={{ color: "#7A5DBE" }}>
+              <Add />
+            </IconButton>
+          </Box>
+
+          {/* Add to Cart Button */}
+          <Button
+            onClick={addToCart}
+            sx={{
+              mt: 2,
+              backgroundColor: "#9370DB",
+              color: "white",
+              fontWeight: "bold",
+              "&:hover": { backgroundColor: "#7A5DBE" },
+            }}
+          >
+            Add to Cart
+          </Button>
+          <Toaster />
+        </CardContent>
+      </Card>
+    </Box>
+  );
+};
+
+export default RestoMenu;

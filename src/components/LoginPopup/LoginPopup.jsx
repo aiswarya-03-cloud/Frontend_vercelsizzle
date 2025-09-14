@@ -612,7 +612,7 @@ const LoginPopUp = ({ setShowLogin }) => {
 
         <div className='login-popup-inputs'>
           {currState === "Sign Up" && (
-            <>
+            <> 
               <input
                 name="name"
                 value={formData.name}
