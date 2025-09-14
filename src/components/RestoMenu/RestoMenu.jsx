@@ -365,12 +365,22 @@
 
 //     let quantity = 1;
 
+<<<<<<< HEAD
 //   try {
 //     const response = await axiosInstance({
 //       url: "/cart/add",
 //       method: "POST",
 //       data:{restaurantId,menuItemId,quantity}
 //     });
+=======
+  try {
+    const response = await axiosInstance({
+      url: "/cart/add",
+      method: "POST",
+      data:{restaurantId,menuItemId,quantity},
+      withCredentials: true,
+    });
+>>>>>>> f06ea3871aab68b1dcd542f164459a537706d674
 
 //     // fetchCartCount(); 
 

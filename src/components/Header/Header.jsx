@@ -34,7 +34,7 @@ const Header = ({setShowLogin}) => {
    <div className="banner">
      
      <div className='slider'>
-         <img src ="\public\Milkshake_resize_final.jpg" id="slideImg" />
+         <img src ="Milkshake_resize_final.jpg" id="slideImg" />
      </div>
 
      <div className ="overlay">
@@ -43,7 +43,7 @@ const Header = ({setShowLogin}) => {
 
          <div className="navbar">
              <div>
-                 <img src= "\public\Sizzler_Bytes_latest.png" class="logo" alt="" />
+                 <img src= "Sizzler_Bytes_latest.png" class="logo" alt="" />
              </div>
 
   
