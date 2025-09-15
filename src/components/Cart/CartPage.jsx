@@ -6,6 +6,7 @@ import { axiosInstance } from "../../config/axiosinstance";
 import toast, { Toaster } from "react-hot-toast";
 import CartCard from "./CartCard";
 import {loadStripe} from "@stripe/stripe-js";
+//import { useAuth } from "../../components/User/AuthContext";
 
 // const CartPage = () => {
  
@@ -85,10 +86,22 @@ import {loadStripe} from "@stripe/stripe-js";
 
 
 const CartPage = () => {
+  //  const { user } = useAuth(); // user info from login
   const [cartDetails, setCartDetails] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  // useEffect(() => {
+  //   if (user) {
+  //     // When user logs in, reset cart
+  //     setCartDetails([]);
+  //     setTotalPrice(0);
 
+  //     // Clear backend cart as well
+  //     axiosInstance.post("/cart/clear-cart", { userId: user._id });
+  //   }
+
+  // }, [user]);
+  
 const makePayment =async () => {
 
   try{
@@ -147,6 +160,23 @@ const makePayment =async () => {
     fetchCartDetails();
   }, []);
 
+// // After successful login/signup
+// const handleLoginSuccess = async (userData) => {
+//   // Clear cart on frontend
+//   setCartDetails([]);
+//   setTotalPrice(0);
+
+//   // Clear cart on backend too
+//   try {
+//     await axiosInstance({
+//       method: "POST",
+//       url: "/cart/clear-cart",  // <-- Create this API in backend
+//       data: { userId: userData._id }
+//     });
+//   } catch (error) {
+//     console.error("Error clearing cart:", error);
+//   }
+// };
 
 
 
