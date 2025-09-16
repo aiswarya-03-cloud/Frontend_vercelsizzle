@@ -561,7 +561,7 @@ const LoginPopUp = ({ setShowLogin }) => {
   // ✅ Function to set the token inside cookies
   // console.log("token:--->",token)
   const setTokenCookie = (token) => {
-    document.cookie = `token=${token}; path=/; max-age=${2 * 60 * 60}; Secure; SameSite=Strict`;
+    document.cookie = `token=${token}; path=/; max-age=${2 * 60 * 60}; Secure=true; SameSite=Lax`;
   };
 
   const onLogin = async (event) => {
